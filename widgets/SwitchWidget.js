@@ -34,6 +34,7 @@ module.exports = React.createClass({
   getDefaultProps() {
     return {
       type: 'SwitchWidget',
+      textProps: {},
     };
   },
 
@@ -43,7 +44,7 @@ module.exports = React.createClass({
         <View style={this.getStyle('row')}>
           {this._renderImage()}
 
-          <Text numberOfLines={1} style={this.getStyle('switchTitle')}>{this.props.title}</Text>
+          <Text numberOfLines={1} {...this.props.textProps} style={this.getStyle('switchTitle')}>{this.props.title}</Text>
           <View style={this.getStyle('switchAlignRight')}>
             <GiftedSwitch
               style={this.getStyle('switch')}

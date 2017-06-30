@@ -19,6 +19,7 @@ module.exports = React.createClass({
       type: 'RowWidget',
       onPress: () => {},
       disclosure: true,
+      textProps: {},
     };
   },
   
@@ -49,7 +50,7 @@ module.exports = React.createClass({
         >
           <View style={this.getStyle('row')}>
             {this._renderImage()}
-            <Text numberOfLines={1} style={this.getStyle('title')}>{this.props.title}</Text>
+            <Text numberOfLines={1} {...this.props.textProps} style={this.getStyle('title')}>{this.props.title}</Text>
             {this._renderDisclosure()}
           </View>
         </TouchableHighlight>
